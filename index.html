@@ -21,6 +21,29 @@
     <script defer src="script.js"></script>
 </head>
 <body>
-    
+    <div class="container">
+        <h1 class="text-center">PARI O DISPARI</h1>
+        <div class="row gap-2">
+            <select class="col form-select" id="even-or-odd">
+                <option selected>Scegli se pari o dispari</option>
+                <option value="even">Pari</option>
+                <option value="odd">Dispari</option>
+            </select>
+            <input type="number" class="col form-control" id="user-number" placeholder="Scegli un numero da 1 a 5">
+            <button id="userChoice" class="col-2 btn btn-success">Bim Bum Bam</button>
+            <button id="reset" class=" col-2 btn btn-danger">Reset</button>   
+        </div>
+        <div class="row text-center">
+            <div class="col">
+                <p class="h4">Player 1</p>
+                <p id="result-player-1"></p>
+            </div>
+            <div class="col">
+                <p class="h4">Player 2</p>
+                <p id="result-player-2"></p>
+            </div>
+        </div>
+
+    </div>
 </body>
 </html>
