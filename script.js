@@ -16,6 +16,15 @@
 // 3. Creo un bottone di invio dal quale far partire tutta la function
 // 4. Prendo il valore pari o dispari prendo il numero inserito dentro il form
 
+// FUNCTION
+function getRundomNumber(min, max) {
+    
+    max++;
+
+    const randomNumber = Math.floor(Math.random() * (max - min)) + min;
+
+    return randomNumber
+}
 
 const button = document.getElementById('userChoice');
 const buttonReset = document.getElementById('reset');
@@ -32,5 +41,8 @@ button.addEventListener('click' , function(){
     message = `Il tuo numero è ${userNumber}`;
     player1.innerText = message
 
+    const cpuNumber = getRundomNumber(1, 5);
+    message = `Il tuo numero è ${cpuNumber}`;
+    player2.innerText = message
     
 })
