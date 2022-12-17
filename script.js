@@ -4,13 +4,39 @@
 
 // FUNCTION
 
-// function isPalindrome (word) {
+function reverseWord(userWord){
+    let reverse = '';
 
-//     let reversedWord = '';
+    for(let i = userWord.length -1; i >= 0; i--) {
+        reverse += userWord[i];
+    }
+
+    return reverse;
+
+}
+
+const controlButton = document.getElementById('control-button');
+const userWord = document.getElementById('user-word');
+const verifiedResult = document.getElementById('verified-result');
 
 
-//     return = result
-// }
+controlButton.addEventListener('click' , function(){
+
+    const userWord = document.getElementById('user-word').value;
+
+    reverseWord(userWord);
+
+    message = 'La parola non è palindroma'
+
+    if (userWord === reverseWord(userWord)) {
+        message = 'La parola è palindroma!'
+    } 
+
+})
+
+buttonReset.addEventListener('click' , function(){
+    location.reload();
+})
 
 
 // Pari e Dispari
@@ -47,9 +73,6 @@ const player2 = document.getElementById('result-player-2');
 const sumResult = document.getElementById('sum-result');
 const finalResult = document.getElementById('final-result');
 
-
-
-
 button.addEventListener('click' , function(){
 
     const userChoiceEvenOrOdd = document.getElementById('even-or-odd').value;
@@ -67,15 +90,13 @@ button.addEventListener('click' , function(){
 
     isEven(sum);
 
-
+    message = 'Il computer ha vinto';
+    
     if (userChoiceEvenOrOdd == 'even' && isEven(sum) == true){
-    message = 'Il giocatore 1 ha vinto'
+    message = 'Hai vinto'
     }
     else if (userChoiceEvenOrOdd == 'odd' && isEven(sum) == false) {
-    message = 'Il giocatore 1 ha vinto'
-    }
-    else {
-    message = 'Il giocatore 2 ha vinto'
+    message = 'Hai vinto'
     }
 
     finalResult.innerText = message;
